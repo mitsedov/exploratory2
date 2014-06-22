@@ -1,0 +1,641 @@
+myData == NA
+sum(myNA)
+myData
+0/0
+Inf-Inf
+x
+x[1:10]
+x[is.na(x)]
+y <- x[!is.na(x)]
+y
+y[y > 0]
+x[x>0]
+x[!is.na(x) & x > 0]
+x[c(3,5,7)]
+x[0]
+x[3000]
+x[c(-2, -10)]
+x[-c(2, 10)]
+vect <- c(foo = 11, bar = 2, norf = NA)
+vect
+names(vect)
+vect2 <- c(11,2,NA)
+names(vect2) <- c('foo','bar','norf')
+identical(vect,vect2)
+vect["bar"]
+vect[c("foo", "bar")]
+0
+я <- rep(1,10)
+z
+я
+?gl
+x <- matrix(1:9,3,3)
+x
+solve(x)
+Solve(x)
+y <- rnorm(9)
+y
+y <- 30*y
+y <- round(y,0)
+y
+x <- matrix(y,3,3)
+x
+solve(x)
+x*solve(x)
+x%*solve(x)
+x%*%solve(x)
+makeVector <- function(x = numeric()) {#
+        m <- NULL#
+        set <- function(y) {#
+                x <<- y#
+                m <<- NULL#
+        }#
+        get <- function() x#
+        setmean <- function(mean) m <<- mean#
+        getmean <- function() m#
+        list(set = set, get = get,#
+             setmean = setmean,#
+             getmean = getmean)#
+}
+makeVector
+makeVector(1)
+makeVector(1)$set
+makeVector(1)
+x <- makeVector(1)
+x
+x <- makeVector(1,2)
+x <- makeVector(1)$set(1)
+x
+x <- makeVector$set(1)
+x <- makeVector(1)$set(1)
+x$set
+x$set(1)
+x$getmean()
+x\
+x
+makeVector
+makeVector(1)
+makeVector$set(1)
+makeVector()
+makeVector(1)
+x<-makeVector(1)
+x
+x$get
+x$get()
+x$set(2)
+x$get()
+x$setmean()
+x$setmean(2)
+x$getmean()
+x$setmean(11)
+x$getmean()
+x$get()
+library(datasets)
+data(iris)
+head(iris)
+?iris
+iris
+iris["Sepal.Length"]
+iris[[]"Sepal.Length"]]
+iris[["Sepal.Length"]]
+mean(iris[["Sepal.Length"]])
+split(iris,iris$Species)
+x <- split(iris,iris$Species)$virginica
+x
+mean(x[["Sepal.Length"]])
+apply(iris, 1:4,mean)
+apply(iris, [1:4],mean)
+apply(iris, [,1:4],mean)
+apply(iris[,1:4],mean)
+apply(iris[,1:4],2,mean)
+apply(iris[,1:4],3,mean)
+apply(iris[,1:4],1,mean)
+apply(iris[,1:4],2,mean)
+apply(iris,1,mean)
+colMeans(iris)
+library(datasets)#
+data(mtcars)
+head(mtcars)
+split(mtcars,mtcars$cyl)
+sapply(split(mtcars,mtcars$cyl),mean)
+lapply(split(mtcars,mtcars$cyl),mean)
+type(split(mtcars,mtcars$cyl))
+class(split(mtcars,mtcars$cyl))
+split(mtcars,mtcars$cyl)$mpg
+split(mtcars,mtcars$cyl)[1]
+mapply(mean,split(mtcars,mtcars$cyl)[1:])
+mapply(mean,split(mtcars,mtcars$cyl))
+split(mtcars,mtcars$cyl)[1][1]
+split(mtcars,mtcars$cyl)[1]$mpg
+split(mtcars,mtcars$cyl)[1]["mpg"]
+split(mtcars,mtcars$cyl)[1,"mpg"]
+split(mtcars,mtcars$cyl)[1]
+class(split(mtcars,mtcars$cyl)[1])
+mtcars$mpg
+tapply(mtcars$mpg,mtcars$cyl)
+tapply(mtcars$mpg,mtcars$cyl,mean)
+sapply(split(mtcars$mpg, mtcars$cyl), mean)
+lapply(mtcars, mean)
+apply(mtcars, 2, mean)
+?mtcars
+tapply(mtcars$hp,mtcars$cyl,mean)
+tapply(mtcars$hp,mtcars$cyl,mean)["8"]
+tapply(mtcars$hp,mtcars$cyl,mean)[["8"]]
+tapply(mtcars$hp,mtcars$cyl,mean)[["8"]]-tapply(mtcars$hp,mtcars$cyl,mean)[["4"]]
+debug(ls)
+ls
+debug(ls)
+ls(1)
+n
+debug(ls)
+ls
+n
+ls
+ls -a
+ls()
+debug(ls)
+ls()
+n
+getwd()
+makeVector <- function(x = numeric()) {#
+        m <- NULL#
+        set <- function(y) {#
+                x <<- y#
+                m <<- NULL#
+        }#
+        get <- function() x#
+        setmean <- function(mean) m <<- mean#
+        getmean <- function() m#
+        list(set = set, get = get,#
+             setmean = setmean,#
+             getmean = getmean)#
+}
+x <- makeVector([1,2,3])
+x <- makeVector(c(1,2,3))
+x
+x$get()
+x$set(1:4)
+x$get()
+x$getmean()
+x$setmean(mean(x$get()))
+x$getmean()
+makeCacheMatrix <- function(mat = matrix()){#
+	inverse <- NULL#
+	set <- function(input){#
+		mat <<- input#
+		inverse <<- NULL#
+	}#
+	get <- function(){#
+		mat#
+	}#
+	setinverse <- function(inv){#
+		inverse <<- inv#
+	}#
+	getinverse <- function{#
+		inverse#
+	}#
+	list(set = set, get = get,#
+    	setinverse = setinverse,#
+    	getinverse = getinverse)#
+}
+makeCacheMatrix <- function(mat = matrix()){#
+	inverse <- NULL#
+	set <- function(input){#
+		mat <<- input#
+		inverse <<- NULL#
+	}#
+	get <- function(){#
+		mat#
+	}#
+	setinverse <- function(inv){#
+		inverse <<- inv#
+	}#
+	getinverse <- function(){#
+		inverse#
+	}#
+	list(set = set, get = get,#
+    	setinverse = setinverse,#
+    	getinverse = getinverse)#
+}
+cacheSolve <- function(m, ...){#
+	inv <- m$getinverse()#
+	if (!is.null(inv)){#
+		message("getting cached data")#
+		return(inv)#
+	}#
+	mat <- m$get()#
+	inv <- solve(mat)#
+	m$setinverse(inv)#
+	inv#
+}
+data <- rnorm(9)
+data
+data <- round(data*40,0)
+data
+test <- makeCacheMatrix(data,3,3)
+test <- makeCacheMatrix(matrix(data,3,3))
+test&get()
+test$get()
+test$getinverse()
+cacheSolve(test)
+test$getinverse()
+cacheSolve(test)
+test$getinverse()
+makeCacheMatrix <- function(x = matrix()) {#
+	inverse <- NULL#
+	set <- function(input){#
+		x <<- input#
+		inverse <<- NULL#
+	}#
+	get <- function(){#
+		x#
+	}#
+	setinverse <- function(inv){#
+		inverse <<- inv#
+	}#
+	getinverse <- function{#
+		inverse#
+	}#
+	list(set = set, get = get,#
+    	setinverse = setinverse,#
+    	getinverse = getinverse)#
+}
+makeCacheMatrix <- function(x = matrix()) {#
+	inverse <- NULL#
+	set <- function(input){#
+		x <<- input#
+		inverse <<- NULL#
+	}#
+	get <- function(){#
+		x#
+	}#
+	setinverse <- function(inv){#
+		inverse <<- inv#
+	}#
+	getinverse <- function(){#
+		inverse#
+	}#
+	list(set = set, get = get,#
+    	setinverse = setinverse,#
+    	getinverse = getinverse)#
+}
+cacheSolve <- function(x, ...) {#
+    inv <- x$getinverse()#
+	if (!is.null(inv)){#
+		message("getting cached data")#
+		return(inv)#
+	}#
+	mat <- x$get()#
+	inv <- solve(x)#
+	x$setinverse(inv)#
+	inv#
+}
+data
+m <- matrix(data,3,3,byrows)
+m <- matrix(data,3,3,byrow)
+m <- matrix(data,3,3,byRow)
+m <- matrix(data,3,3,byRows)
+?matrix
+m <- matrix(data,3,3,byrow = TRUE)
+m
+x <- makeCacheMatrix(m)
+x$get()
+m[1,1] <- 1
+m
+x$set(m)
+x$get()
+x$getinverse()
+cacheSolve(x)
+cacheSolve <- function(x, ...) {#
+    inv <- x$getinverse()#
+	if (!is.null(inv)){#
+		message("getting cached data")#
+		return(inv)#
+	}#
+	mat <- x$get()#
+	inv <- solve(mat)#
+	x$setinverse(inv)#
+	inv#
+}
+cacheSolve(x)
+x$get()%*%cacheSolve(x)
+round(x$get()%*%cacheSolve(x),1)
+## The two functions below can be used to create an object that stores the   #
+## value of a matrix and caches the value of the inverse of this matrix.#
+#
+## The function makeCacheMatrix creates a list containing functions to #
+## 1. set the value of the matrix#
+## 2. get the value of the matrix#
+## 3. set the value of the inverse of the matrix#
+## 4. get the value of the inverse of the matrix#
+#
+makeCacheMatrix <- function(x = matrix()) {#
+	inverse <- NULL#
+	set <- function(input){#
+		x <<- input#
+		inverse <<- NULL#
+	}#
+	get <- function(){#
+		x#
+	}#
+	setinverse <- function(inv){#
+		inverse <<- inv#
+	}#
+	getinverse <- function(){#
+		inverse#
+	}#
+	list(set = set, get = get,#
+    	setinverse = setinverse,#
+    	getinverse = getinverse)#
+}#
+## The function below solves for the inverse of the matrix-like object #
+## created by the function makeCacheMatrix. The cacheSolve function #
+## checks if the inverse has already been calculated. If yes, the #
+## inverse matrix is taken from cache. Otherwise, the inverse matrix #
+## is calculated and sets the value of the inverse in the cache with #
+## setinverse function.#
+#
+cacheSolve <- function(x, ...) {#
+    inv <- x$getinverse()#
+	if (!is.null(inv)){#
+		## This piece of code returns the inverse matrix #
+		## if it is already in cache#
+		message("Getting cached inverse matrix")#
+		return(inv)#
+	}#
+	## This piece of code computes the inverse and stores #
+	## it in cache if it wasn't done before #
+	mat <- x$get()#
+	inv <- solve(mat)#
+	x$setinverse(inv)#
+	inv#
+}
+m
+y <- makeCacheMatrix(m)
+## The two functions below can be used to create an object that stores the   #
+## value of a matrix and caches the value of the inverse of this matrix.#
+#
+## The function makeCacheMatrix creates a matrix like object that can #
+## store its inverse. makeCacheMatrix function contains a list with #
+## functions to #
+## 1. set the value of the matrix#
+## 2. get the value of the matrix#
+## 3. set the value of the inverse of the matrix#
+## 4. get the value of the inverse of the matrix#
+#
+makeCacheMatrix <- function(x = matrix()) {#
+	inverse <- NULL#
+	set <- function(input){#
+		x <<- input#
+		inverse <<- NULL#
+	}#
+	get <- function(){#
+		x#
+	}#
+	setinverse <- function(inv){#
+		inverse <<- inv#
+	}#
+	getinverse <- function(){#
+		inverse#
+	}#
+	list(set = set, get = get,#
+    	setinverse = setinverse,#
+    	getinverse = getinverse)#
+}#
+## The function below solves for the inverse of the matrix-like object #
+## created by the function makeCacheMatrix. The cacheSolve function #
+## checks if the inverse has already been calculated. If yes, the #
+## inverse matrix is taken from cache. Otherwise, the inverse matrix #
+## is calculated and sets the value of the inverse in the cache with #
+## setinverse function.#
+#
+cacheSolve <- function(x, ...) {#
+    inv <- x$getinverse()#
+	if (!is.null(inv)){#
+		## This piece of code returns the inverse matrix #
+		## if it is already in cache#
+		message("Getting cached inverse matrix")#
+		return(inv)#
+	}#
+	## This piece of code computes the inverse and stores #
+	## it in cache if it wasn't done before #
+	mat <- x$get()#
+	inv <- solve(mat)#
+	x$setinverse(inv)#
+	inv#
+}
+y <- makeCacheMatrix(m)
+y
+y$get()
+y$getinverse()
+cacheSolve(y)
+data <- rnorm(9)
+data <- round(data*40,0)
+m <- matrix(data,3,3,byrow = TRUE)
+m
+makeCacheMatrix <- function(x = matrix()) {#
+	inverse <- NULL#
+	set <- function(input){#
+		x <<- input#
+		inverse <<- NULL#
+	}#
+	get <- function(){#
+		x#
+	}#
+	setinverse <- function(inv){#
+		inverse <<- inv#
+	}#
+	getinverse <- function(){#
+		inverse#
+	}#
+	list(set = set, get = get,#
+    	setinverse = setinverse,#
+    	getinverse = getinverse)#
+}#
+## The function below solves for the inverse of the matrix-like object #
+## created by the function makeCacheMatrix. The cacheSolve function #
+## checks if the inverse has already been calculated. If yes, the #
+## inverse matrix is taken from cache. Otherwise, the inverse matrix #
+## is calculated and sets the value of the inverse in the cache with #
+## setinverse function.#
+#
+cacheSolve <- function(x, ...) {#
+    inv <- x$getinverse()#
+    if (!is.null(inv)){#
+	## This piece of code returns the inverse matrix #
+	## if it is already in cache#
+	message("Getting cached inverse matrix")#
+	return(inv)#
+    }#
+    ## This piece of code computes the inverse and stores #
+    ## it in cache if it wasn't done before #
+    mat <- x$get()#
+    inv <- solve(mat)#
+    x$setinverse(inv)#
+    inv#
+}
+y <- makeCacheMatrix(m)
+y$get()
+cacheSolve(y)
+y$getinverse()
+## The two functions below can be used to create an object that stores the   #
+## value of a matrix and caches the value of the inverse of this matrix.#
+#
+## The function makeCacheMatrix creates a matrix like object that can #
+## store its inverse. makeCacheMatrix function contains a list with #
+## functions to #
+## 1. set the value of the matrix#
+## 2. get the value of the matrix#
+## 3. set the value of the inverse of the matrix#
+## 4. get the value of the inverse of the matrix#
+#
+makeCacheMatrix <- function(x = matrix()) {#
+	inverse <- NULL#
+	set <- function(input){#
+		## Set the value of the matrix#
+		x <<- input#
+		inverse <<- NULL#
+	}#
+	get <- function(){#
+		## Get the value of the matrix#
+		x#
+	}#
+	setinverse <- function(inv){#
+		## Set the value of the inverse matrix#
+		inverse <<- inv#
+	}#
+	getinverse <- function(){#
+		## Get the value of the inverse matrix#
+		inverse#
+	}#
+	list(set = set, get = get,#
+    	setinverse = setinverse,#
+    	getinverse = getinverse)#
+}#
+## The function below solves for the inverse of the matrix-like object #
+## created by the function makeCacheMatrix. The cacheSolve function #
+## checks if the inverse has already been calculated. If yes, the #
+## inverse matrix is taken from cache. Otherwise, the inverse matrix #
+## is calculated and sets the value of the inverse in the cache with #
+## setinverse function.#
+#
+cacheSolve <- function(x, ...) {#
+        inv <- x$getinverse()#
+        if (!is.null(inv)){#
+	        ## This piece of code returns the inverse matrix #
+	        ## if it is already in cache#
+	        message("Getting cached inverse matrix")#
+	        return(inv)#
+        }#
+        ## This piece of code computes the inverse and stores #
+        ## it in cache if it wasn't done before #
+        mat <- x$get()#
+        inv <- solve(mat)#
+        x$setinverse(inv)#
+        inv#
+}
+ls()
+swirl()
+library("swirl")
+swirl()
+myVector <- 1:20
+myVextor
+myVector
+dim(myVector)
+length(myVector)
+dim(myVector) <- c(4,5)
+dim(myVector)
+attributes(myVector)
+myVector
+class(myVector)
+myMatrix <- myVector
+?matrix
+myMatrix2 <- matrix(1:20, nrow = 4, ncol = 5)
+identical(myMatrix, myMatrix2)
+patients <- c("Bill", "Gina", "Kelly", "Sean")
+cbind(patients,myMatrix)
+myData <- data.frame(patients, myMatrix)
+myData
+class(myData)
+cnames <- c("patient", "age", "weight", "bp", "rating", "test")
+colnames(myData)<-cnames
+myData
+require(circular)#
+for (i in 1:10){#
+    rose.diag(circular(runif(5000, 0, 2*pi)),#
+              bins = (25-round(abs(jitter(0, amount=2*i)))),#
+              axes=FALSE,#
+              border=rgb(255,50+204*((i-1)/10),50+204*((i-1)/10), alpha=255, max=255),#
+              ticks = FALSE,#
+              col=rgb(250,0+204*((i-1)/10),0+204*((i-1)/10), alpha=255, max=255),#
+              control.circle=circle.control(lty=0),#
+              shrink=0.19+(i-1)*(2-0.22)/10)#
+    par(new=TRUE) #
+}#
+for (i in 1:150){#
+    q = runif(1)*pi*2#
+    r = sqrt(runif(1))#
+    x = (0.30*r)* cos(q)#
+    y = (0.30*r)* sin(q)#
+    points(x, y,#
+           col = rgb(255, sample(50:120, 1), 0, alpha= 90, max=255),#
+           bg = rgb(255, sample(150:200, 1), 0, alpha= 90, max=255), pch=21, cex=2)#
+}
+library("circular")
+source("circular")
+source(circular)
+install.packages("circular")
+require(circular)#
+for (i in 1:10){#
+    rose.diag(circular(runif(5000, 0, 2*pi)),#
+              bins = (25-round(abs(jitter(0, amount=2*i)))),#
+              axes=FALSE,#
+              border=rgb(255,50+204*((i-1)/10),50+204*((i-1)/10), alpha=255, max=255),#
+              ticks = FALSE,#
+              col=rgb(250,0+204*((i-1)/10),0+204*((i-1)/10), alpha=255, max=255),#
+              control.circle=circle.control(lty=0),#
+              shrink=0.19+(i-1)*(2-0.22)/10)#
+    par(new=TRUE) #
+}#
+for (i in 1:150){#
+    q = runif(1)*pi*2#
+    r = sqrt(runif(1))#
+    x = (0.30*r)* cos(q)#
+    y = (0.30*r)* sin(q)#
+    points(x, y,#
+           col = rgb(255, sample(50:120, 1), 0, alpha= 90, max=255),#
+           bg = rgb(255, sample(150:200, 1), 0, alpha= 90, max=255), pch=21, cex=2)#
+}
+source("plot6.R")
+ls()
+vehicles <- SCC[SCC$Data.Category == "Onroad","SCC"]#
+## Look for data corresponding to "Onroad" category, which is probably a good proxy#
+## for data on motor vehicles#
+#
+## Subset only the data related to motor vehicle emissions in Baltimore or LA#
+veh_data <- NEI[(NEI$SCC %in% vehicles & (NEI$fips == "24510" | NEI$fips == "06037")),]#
+#
+## Calculate vehicle emissions by location and year#
+veh_year <- ddply(veh_data, c("fips", "year"), function(df) c(Emissions = sum(df$Emissions)))#
+#
+## Change factor labels to more obvious ones#
+veh_year$fips <- factor(veh_year$fips, levels = c("24510","06037"), labels = c("Baltimore", "LA"))#
+#
+## Create two barplots (emissions vs year) with facets by location#
+g <- ggplot(veh_year, aes(year, Emissions))#
+pic <- g + geom_bar(stat = "identity") + facet_grid(.~fips) + scale_x_continuous(breaks=c(1999,2002,2005,2008)) + geom_line(colour = "red", stat = "identity") + geom_point(stat="identity",colour = "red", shape = 20) + labs(title = "Emission Dynamics from Vehicles,\n by Location")#
+#
+## Save the plot#
+ggsave(filename = "plot6.png", plot = pic)#
+#
+##Check that the absolute changes in emissions were greater than in LA#
+r_la <- range(veh_year[veh_year$fips=="LA","Emissions"])#
+r_ba <- range(veh_year[veh_year$fips=="Baltimore","Emissions"])#
+change_la <- max(r_lb) - min(r_lb)#
+change_ba <- max(r_ba) - min(r_ba)#
+change_la > change_ba
+r_la <- range(veh_year[veh_year$fips=="LA","Emissions"])#
+r_ba <- range(veh_year[veh_year$fips=="Baltimore","Emissions"])#
+change_la <- max(r_la) - min(r_la)#
+change_ba <- max(r_ba) - min(r_ba)#
+change_la > change_ba
